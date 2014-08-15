@@ -85,8 +85,8 @@ var ContentToggle = React.createClass({
   render: function() {
     return (
       <div className="ContentToggle">
-        <div class="ContentToggle__Summary">{this.props.summary}</div>
-        <div class="ContentToggle__Details">{this.props.children}</div>
+        <div className="ContentToggle__Summary">{this.props.summary}</div>
+        <div className="ContentToggle__Details">{this.props.children}</div>
       </div>
     );
   }
@@ -126,10 +126,10 @@ var ContentToggle = React.createClass({
   render: function() {
     return (
       <div className="ContentToggle">
-        <div onClick={this.handleClick} class="ContentToggle__Summary">
+        <div onClick={this.handleClick} className="ContentToggle__Summary">
           {this.props.summary}
         </div>
-        <div class="ContentToggle__Details">
+        <div className="ContentToggle__Details">
           {this.props.children}
         </div>
       </div>
@@ -172,7 +172,7 @@ var ContentToggle = React.createClass({
 
     return (
       <div className="ContentToggle">
-        <div onClick={this.handleClick} class="ContentToggle__Summary">
+        <div onClick={this.handleClick} className="ContentToggle__Summary">
           {this.props.summary}
         </div>
         <div className="ContentToggle__Details">
