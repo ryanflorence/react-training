@@ -102,8 +102,9 @@ Usage:
 </ContentToggle>
 ```
 
-Properties are passed in just like HTML attributes; you access the
-children nested in the component on `this.props.children`.
+Properties are passed in just like HTML attributes. You access the
+children nested in the component on `this.props.children`; this
+is like `{{yield}}` in ember or angular's `ng-transclude`.
 
 Note the `{curlies}`. When you're in JSX, this is how you bust back out
 into JavaScript. So you've got JavaScript in your XML in your JavaScript
