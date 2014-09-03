@@ -1,0 +1,126 @@
+body {
+  font-family: "Helvetica Neue";
+  color: hsl(200, 50%, 10%);
+}
+
+path {
+  fill: hsl(200, 50%, 10%);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-no-shrink {
+  flex-shrink: 0;
+}
+
+.align-right {
+  text-align: right;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  height: 100%;
+}
+
+.master {
+  width: 0px;
+  background: hsl(200, 50%, 10%);
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  transition: width 200ms ease;
+}
+
+.nav-open .master {
+  width: 400px;
+}
+
+.Toolbar {
+  padding: 10px;
+  height: 45px;
+  border-bottom: 1px solid hsl(0, 0%, 75%);
+}
+
+.preview {
+  border: none;
+  display: block;
+}
+
+.code, .preview {
+  width: 50%;
+}
+
+.code {
+  overflow: auto;
+  outline: none;
+  font-size: 16px;
+  font-family: "Source Code Pro";
+  padding: 10px;
+  margin: 0;
+  border: none;
+  border-right: 1px solid hsl(0, 0%, 75%);
+  color: hsl(200, 50%, 75%);
+  background: hsl(200, 50%, 95%);
+}
+
+.code:focus {
+  color: hsl(200, 50%, 10%);
+}
+
+.master a {
+  outline: none;
+  display: block;
+  color: hsl(200, 90%, 100%);
+  padding: 0px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.master a:hover,
+.master a:focus {
+  background: hsl(200, 50%, 20%);
+}
+
+.master a.active {
+  background: hsl(200, 50%, 50%);
+}
+
+.master a:active {
+  background: hsl(200, 50%, 30%);
+}
+
+.Toolbar button {
+  outline: none;
+  border: none;
+  display: inline-block;
+  background: none;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.Toolbar button:focus path {
+  fill: hsl(200, 70%, 50%);
+}
+
+.Toolbar button:active path {
+  fill: hsl(10, 50%, 50%);
+}
+

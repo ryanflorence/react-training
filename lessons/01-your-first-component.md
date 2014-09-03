@@ -2,7 +2,7 @@ Your First Component
 ====================
 
 React is just a view layer. Everything in React is a component. You can
-think of these as web components, Ember components, or angular
+think of these as web components, Ember components, or Angular
 directives. They simply represent a section of your UI.
 
 Rendering UI
@@ -98,7 +98,7 @@ Usage:
 
 ```xml
 <ContentToggle summary="Tacos">
-  <p>Everybody should tacos.</p>
+  <p>Everybody should eat tacos.</p>
 </ContentToggle>
 ```
 
@@ -113,9 +113,9 @@ and you'll most likely love it soon but hate it right now.
 Event Handlers
 --------------
 
-We want to click the summary and have the details toggle visibility.
-React uses the DOM names for event handlers declared on the element
-itself.
+We want to click the summary and have the details toggle it's
+visibility.  React uses the DOM names for event handlers declared on the
+element itself: `onClick`, not `onclick`.
 
 ```js
 var ContentToggle = React.createClass({
@@ -144,18 +144,20 @@ State
 -----
 
 In React, the state of your component is restricted to the values on
-`this.state`. Whenever this state changes, your component will rerender.
+`this.state`. Whenever you change state, your component will re-render.
 
-Your component won't actually rerender everything to the DOM, but it
-does rerender your entire component to a virtual DOM. It then compares
-this new virtual DOM to the previous one. The resulting diff is the
-smallest set of operations to apply to the real DOM.
+Your component won't actually re-render everything to the DOM, but it
+will re-render to a virtual DOM. It then compares this new virtual DOM
+to the previous one. The resulting diff is the smallest set of
+operations to apply to the real DOM.
 
 We'll use state to manage the visibility of our details view.
 
 ```js
 var ContentToggle = React.createClass({
 
+  // lifecycle hook to get initial state and declare what
+  // state you'll be managing in this component
   getInitialState: function() {
     return {
       showDetails: false
@@ -186,15 +188,18 @@ var ContentToggle = React.createClass({
 });
 ```
 
-"Always Rerender" Model
------------------------
+"Always Re-render" Model
+------------------------
 
-You hear the term "always rerender" in React. Instead of initializing a
+You hear the term "always re-render" in React. Instead of initializing a
 view and then observing values as they change over time (a difficult
 mental model as more things start happening in your views), in your
 render method you get to pretend like this is the first and only time
-you're ever rendering. Let's add some classes to our elements to see if
-we can get a feel for what this means.
+you're ever rendering. Or, you can think of it like stateless
+server-side rendering like you do in Rails or PHP.
+
+Let's add some classes to our elements to see if we can get a feel for
+what this means.
 
 ```js
 var ContentToggle = React.createClass({
@@ -226,8 +231,8 @@ var ContentToggle = React.createClass({
 ```
 
 Rather than observing state over time, we just consider the current
-state and build up our `className`. There is no adding / removing, just
-building. Its actually the same mental model as server rendering. You
+state and build up our `className`. There is no adding or removing, just
+building. Again, its the same mental model as server rendering. You
 don't observe fields in the database and then change the HTML a route
 will render, you just render the data as it is right now.
 
@@ -240,16 +245,13 @@ Managing Focus and Refs
 -----------------------
 
 To make this accessible, we need to manage focus. First we simply add
-`tabIndex="0"` to the summary to make it tabbable and `tabIndex="-1"` to the
-details so we can programmatically focus it. But the real task is to go
-focus the details when it expands.
-
-**Note:** React uses the `camelCase` DOM version of attributes and event
-handlers, like `tabIndex` and `onClick`.
+`tabIndex="0"` to the summary to make it tabbable and `tabIndex="-1"` to
+the details so we can programmatically focus it. But, the real task is
+to go focus the details when it expands.
 
 In order to do this we need to access the the details element. Instead
 of relying on DOM traversal like `this.$()` from Ember or the `element`
-api in an angular directive, to get at our elements React uses `refs`.
+api in an Angular directive, to get at our elements React uses `refs`.
 
 Refs are sort of like element IDs but scoped to the component that owns
 the ref.
@@ -288,6 +290,15 @@ var ContentToggle = React.createClass({
 Not the `ref="details"` and then accessing it in `handleClick` with
 `this.refs.details`. Finally, to get at the actual DOM node, you call
 `getDOMNode()` on a ref.
+
+We are fortunate that `refs.details` is always rendered. If the element
+you need to focus is not going to be rendered until React is done with
+its next render cycle from calling `setState`, focus the element in the
+`setState` callback.
+
+```js
+this.setState(someState, this.focusSomething);
+```
 
 Homework
 -----------------
