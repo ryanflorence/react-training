@@ -65,13 +65,13 @@ time because the node for the dialog element has been moved and has a bunch
 of new elements wrapping it. React only writes to the DOM, it never reads,
 so if you change it, it doesn't know what its supposed to do anymore.
 
-DOM Jumping
------------
+Portals
+-------
 
 We need a way to stop rendering with React, do the jQuery dialog work,
-and then start rendering with React again. I call this "DOM jumping".
-You jump over a bit of old-school DOM stuff, and then keep going with
-React.
+and then start rendering with React again. Some people call these
+"Portals".  You open a portal for React to skip over a bit of old-school
+DOM stuff, and then keep going on the other side.
 
 The big trick is rendering nothing and then calling
 `React.renderComponent` _inside_ a component.
@@ -79,7 +79,7 @@ The big trick is rendering nothing and then calling
 ```js
 var Dialog = React.createClass({
   render: function() {
-    // don't render anything, this is where we "jump"
+    // don't render anything, this is where we open the portal
     return <div/>;
   },
 
@@ -90,7 +90,7 @@ var Dialog = React.createClass({
     var dialog = $(node).dialog().data('ui-dialog');
   
     // start a new React render tree with our node and the children
-    // passed in from above, this is the landing to our jump
+    // passed in from above, this is the other side of the portal.
     React.renderComponent(<div>{this.props.children}</div>, node):
   }
 });
@@ -106,7 +106,7 @@ DOM work, and then start rendering again with a new tree in
 
 Now, when the owner component sets new state, and our dialog re-renders,
 React doesn't care or even know that there's a bunch of different DOM
-because we jumped over it.
+because it went through a portal.
 
 Getting Updates
 ---------------
