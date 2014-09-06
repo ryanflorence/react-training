@@ -8,11 +8,24 @@ directives. They simply represent a section of your UI.
 Rendering UI
 ------------
 
+First, we'll just render a div into the document body:
+
+```js
+React.renderComponent(<div>this is dumb</div>, document.body);
+```
+
+Components are just functions, so we could do this without that freaky
+JSX like so:
+
+```js
+var div = React.DOM.div;
+React.renderComponent(div({}, 'this is dumb'), document.body);
+```
+
 Lets create our first component and render it to the page:
 
 ```js
 var App = React.createClass({
-
   render: function() {
     return (
       <div className="App">
@@ -20,7 +33,6 @@ var App = React.createClass({
       </div>
     );
   }
-
 });
 
 React.renderComponent(<App/>, document.body);
@@ -104,7 +116,7 @@ Usage:
 
 Properties are passed in just like HTML attributes. You access the
 children nested in the component on `this.props.children`; this
-is like `{{yield}}` in ember or angular's `ng-transclude`.
+is like `{{yield}}` in Ember or Angular's `ng-transclude`.
 
 Note the `{curlies}`. When you're in JSX, this is how you bust back out
 into JavaScript. So you've got JavaScript in your XML in your JavaScript
@@ -287,7 +299,7 @@ var ContentToggle = React.createClass({
 });
 ```
 
-Not the `ref="details"` and then accessing it in `handleClick` with
+Note the `ref="details"` and then accessing it in `handleClick` with
 `this.refs.details`. Finally, to get at the actual DOM node, you call
 `getDOMNode()` on a ref.
 
