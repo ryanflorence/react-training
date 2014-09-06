@@ -1,0 +1,19 @@
+body {
+  font-family: "Helvetica Neue", arial, sans-serif;
+}
+
+.ContentToggle__Summary {
+  cursor: pointer;
+  border-bottom: solid 1px transparent;
+}
+
+.ContentToggle__Summary:before {
+  display: inline-block;
+  width: 1em;
+  content: '▸';
+}
+
+.ContentToggle__Summary--open:before {
+  content: '▾';
+}
+
