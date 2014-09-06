@@ -1,6 +1,9 @@
 Wrapping DOM Libs
 =================
 
+[Demo](http://rpflorence.github.io/react-training/Dialog/)
+[Code](../code/Dialog/)
+
 We're not going to get away from DOM libs like jQuery UI or stuff we've
 written in Backbone. React handles integrating with dom-centric libraries
 incredibly well.

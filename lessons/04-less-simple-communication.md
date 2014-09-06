@@ -1,6 +1,9 @@
 Less Simple Communication
 =========================
 
+[Demo](http://rpflorence.github.io/react-training/SidewaysCommunication/)
+[Code](../code/SidewaysCommunication/)
+
 Passing function props from the owner to a component works great when you go just one level. However, when you have to pass the functions down more than one level, your application becomes brittle and difficult to refactor. I call this "drilling holes". When the hierarchy changes, it's error-prone and cumbersome. Refactoring large components requires you to re-drill those holes and change a lot of tests.
 
 Drilling Holes

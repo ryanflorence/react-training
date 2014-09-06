@@ -1,6 +1,9 @@
 Testing Components
 ==================
 
+[Demo](http://rpflorence.github.io/react-training/ContentToggler/test-runner.html)
+[Code](../code/ContentToggler/tests.js)
+
 Setting up a test for a React component is not really different than
 rendering it into your app. Let's test our `ContentToggle` component
 from the last lesson.
