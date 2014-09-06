@@ -1,7 +1,7 @@
 Your First Component
 ====================
 
-[Demo](http://rpflorence.github.io/react-training/ContentToggler)
+[Demo](http://rpflorence.github.io/react-training/code/ContentToggler)
 [Code](../code/ContentToggler)
 
 React is just a view layer. Everything in React is a component. You can
