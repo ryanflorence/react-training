@@ -52,10 +52,10 @@ React will know it has a component there and unmount it.
 
 React provides a test utility named `renderIntoDocument`. It renders
 your component into a detached DOM node, so you won't see it in the
-browser as you test, but it makes your tests faster. I don't use it
-because I always have tests that check if elements receive focus: you
-can't assert that unless its in the document. If you need to speed up
-your tests though, you can use `renderIntoDocument` for all the tests
+browser as you test, but it makes your tests faster. I don't often use
+it because I usually have tests that check if elements receive focus:
+you can't assert that unless its in the document. If you need to speed
+up your tests though, you can use `renderIntoDocument` for all the tests
 that don't assert element focus.
 
 ```js
@@ -77,6 +77,8 @@ equal(details.innerHTML.trim(), '',
   'details are hidden by default');
 ```
 
+That's all you need to start testing a component. Simple stuff.
+
 Simulating Events
 -----------------
 
@@ -85,7 +87,7 @@ component, like `click` and `dragEnter`. The utility supports any event
 React understands.
 
 Let's simulate some clicks on the summary and assert that the details
-display, and get focus.
+display and receive focus.
 
 ```js
 // simulate an action on summary
