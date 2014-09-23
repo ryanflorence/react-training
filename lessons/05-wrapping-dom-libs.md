@@ -55,7 +55,7 @@ var App = React.createClass({
     return (
       <div>
         <Dialog>
-          <div>{this.state.name}</div>
+          <div>{this.state.now}</div>
         </Dialog>
       </div>
     );
