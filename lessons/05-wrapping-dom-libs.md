@@ -239,6 +239,7 @@ var Dialog = React.createClass({
   // ...
 
   componentWillUnmount: function() {
+    React.unmountComponentAtNode(this.node);
     this.dialog.destroy();
   }
 });
