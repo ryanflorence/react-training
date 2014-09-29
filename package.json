@@ -1,0 +1,14 @@
+{
+  "name": "react-training",
+  "author": "Ryan Florence <rpflorence@gmail.com>",
+  "version": "0.0.1",
+  "description": "materials for react-training sessions at instructure",
+  "main": "",
+  "scripts": {
+    "start": "http-server"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.7.1"
+  }
+}

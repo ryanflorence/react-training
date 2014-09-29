@@ -8,3 +8,18 @@ The main branch is gh-pages, so all of the examples in `code/` should
 run at http://rpflorence.github.io/react-training/code (but you'll have
 to punch in the URL for now).
 
+
+## Running the examples locally
+
+```bash
+
+npm install
+npm run
+
+```
+
+Then interact with the examples at:
+
+```
+localhost:8080
+```
