@@ -12,10 +12,8 @@ to punch in the URL for now).
 ## Running the examples locally
 
 ```bash
-
 npm install
-npm run
-
+npm start
 ```
 
 Then interact with the examples at:
