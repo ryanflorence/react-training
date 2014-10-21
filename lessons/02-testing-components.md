@@ -129,7 +129,12 @@ passing test suite and a totally useless component.
 
 Finally, avoid calling methods directly on a component. Simulate events
 that exercise the behavior you want to assert. Its rare in React that a
-component has a "public" method. Typically you re-render from a parent
-component with a different property, or pass data around with function
-properties. If that doesn't make sense now, hopefully it will later!
+component has a "public" method. If that method takes some input and
+returns some output, it sounds like it would be happier living in a
+module somewhere else that doesn't even require UI to be tested.
+
+In other words, when testing components, the inputs are properties
+passed in and events the component responds to (usually user events);
+the output is the display in the DOM. Anything else can probably live
+outside the component.
 
