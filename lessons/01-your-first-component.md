@@ -129,7 +129,7 @@ Event Handlers
 --------------
 
 We want to click the summary and have the details toggle it's
-visibility.  React uses the DOM names for event handlers declared on the
+visibility.  React uses `camelCase` names for event handlers declared on the
 element itself: `onClick`, not `onclick`.
 
 ```js
