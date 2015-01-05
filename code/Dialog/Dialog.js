@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var Dialog = React.createClass({
   render: function() {
     // 1) render nothing, this way the DOM diff will never try to do
@@ -34,7 +32,7 @@ var Dialog = React.createClass({
     // 5) make a new rendering tree, we've now hidden the DOM
     //    manipulation from jQuery UI dialog and then continued
     //    rendering with React
-    React.renderComponent(<div>{props.children}</div>, this.node);
+    React.render(<div>{props.children}</div>, this.node);
 
     // 6) Call methods on the DOM lib via prop changes
     if (props.open)
@@ -55,4 +53,3 @@ var Dialog = React.createClass({
     }
   }
 });
-

@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var AssignmentList = React.createClass({
   render: function() {
     var assignments = this.props.assignments.map(function(assignment) {
@@ -36,4 +34,4 @@ var App = React.createClass({
   }
 });
 
-React.renderComponent(<App/>, document.body);
+React.render(<App/>, document.body);

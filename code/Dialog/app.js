@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var App = React.createClass({
 
   getInitialState: function() {
@@ -53,4 +51,4 @@ var App = React.createClass({
   }
 });
 
-React.renderComponent(<App/>, document.body);
+React.render(<App/>, document.body);

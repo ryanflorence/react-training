@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 var ContentToggle = React.createClass({
 
   getInitialState: function() {
@@ -45,4 +43,3 @@ var ContentToggle = React.createClass({
   }
 
 });
-
