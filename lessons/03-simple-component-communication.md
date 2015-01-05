@@ -212,7 +212,7 @@ an `onCreate` property, they'll get a warning in the console:
 > Warning: Required prop `onCreate` was not specified in
 > `AssignmentForm`. Check the render method of `App`.
 
-Or if its the wrong type:
+Or if it's the wrong type:
 
 > Warning: Invalid prop `onCreate` of type `string` supplied to
 > `AssignmentForm`, expected `function`. Check the render method of

@@ -66,7 +66,7 @@ var App = React.createClass({
 As soon as we call `setState` in the interval, React is gonna have a bad
 time because the node for the dialog element has been moved and has a bunch
 of new elements wrapping it. React only writes to the DOM, it never reads,
-so if you change it, it doesn't know what its supposed to do anymore.
+so if you change it, it doesn't know what it's supposed to do anymore.
 
 Portals
 -------

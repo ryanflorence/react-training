@@ -69,7 +69,9 @@ var Content = React.createClass({
 <Content onCreateAssignment={this.addAssignment} />
 ```
 
-It works ... but its kind of dumb. Imagine going three or four levels deep D: We'd also want to add some propTypes to `Content` like we did in the last lesson on `AssignmentForm`.
+It works ... but it's kind of dumb. Imagine going three or four levels deep
+D: We'd also want to add some `propTypes` to `Content` like we did in the
+last lesson on `AssignmentForm`.
 
 All of this is cumbersome and discourages refactoring to better code. Every time you move a component around you have to fill in old holes, drill new ones and fix tests.
 
@@ -156,7 +158,11 @@ var AssignmentActions = {
 };
 ```
 
-We're almost done. Everything is set up correctly but our `App` component won't ever know that an assignment has been created. We can assign `AssignmentStore.onChange` to a method in `App` so it knows when to get its state from the store again. Its a pretty decent refactor but I think it'll make sense:
+We're almost done. Everything is set up correctly but our `App` component
+won't ever know that an assignment has been created. We can assign
+`AssignmentStore.onChange` to a method in `App` so it knows when to get
+its state from the store again. It's a pretty decent refactor but I think
+it'll make sense:
 
 ```js
 var App = React.createClass({
