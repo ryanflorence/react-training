@@ -4,7 +4,7 @@ Simple Component Communication
 [Demo](http://rpflorence.github.io/react-training/code/AssignmentForm/)
 [Code](../code/AssignmentForm/)
 
-In react you can communicate between components with functions passed
+In React you can communicate between components with functions passed
 from parents to children, and then children call those functions.
 
 First, the DOM
