@@ -1,7 +1,7 @@
 Wrapping DOM Libs
 =================
 
-[Demo](http://rpflorence.github.io/react-training/code/Dialog/)
+[Demo](http://ryanflorence.github.io/react-training/code/Dialog/)
 [Code](../code/Dialog/)
 
 We're not going to get away from DOM libs like jQuery UI or stuff we've

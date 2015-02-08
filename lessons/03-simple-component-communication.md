@@ -1,7 +1,7 @@
 Simple Component Communication
 ==============================
 
-[Demo](http://rpflorence.github.io/react-training/code/AssignmentForm/)
+[Demo](http://ryanflorence.github.io/react-training/code/AssignmentForm/)
 [Code](../code/AssignmentForm/)
 
 In react you can communicate between components with functions passed
