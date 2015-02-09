@@ -1,7 +1,7 @@
 Wrapping DOM Libs
 =================
 
-[Demo](http://rpflorence.github.io/react-training/code/Dialog/)
+[Demo](http://ryanflorence.github.io/react-training/code/Dialog/)
 [Code](../code/Dialog/)
 
 We're not going to get away from DOM libs like jQuery UI or stuff we've
@@ -66,7 +66,7 @@ var App = React.createClass({
 As soon as we call `setState` in the interval, React is gonna have a bad
 time because the node for the dialog element has been moved and has a bunch
 of new elements wrapping it. React only writes to the DOM, it never reads,
-so if you change it, it doesn't know what its supposed to do anymore.
+so if you change it, it doesn't know what it's supposed to do anymore.
 
 Portals
 -------
@@ -77,7 +77,7 @@ and then start rendering with React again. Some people call these
 DOM stuff, and then keep going on the other side.
 
 The big trick is rendering nothing and then calling
-`React.renderComponent` _inside_ a component.
+`React.render` _inside_ a component.
 
 ```js
 var Dialog = React.createClass({
@@ -94,7 +94,7 @@ var Dialog = React.createClass({
   
     // start a new React render tree with our node and the children
     // passed in from above, this is the other side of the portal.
-    React.renderComponent(<div>{this.props.children}</div>, node):
+    React.render(<div>{this.props.children}</div>, node):
   }
 });
 ```
@@ -134,7 +134,7 @@ var Dialog = React.createClass({
 
   // add this hook
   componentWillReceiveProps: function(newProps) {
-    // its important to pass the new props in
+    // it's important to pass the new props in
     this.renderDialogContent(newProps);
   },
 
@@ -144,7 +144,7 @@ var Dialog = React.createClass({
     props = props || this.props;
 
     // the code that used to be in `componentDidMount`
-    React.renderComponent(<div>{props.children}</div>, this.node):
+    React.render(<div>{props.children}</div>, this.node):
   }
 });
 ```
@@ -213,7 +213,7 @@ var Dialog = React.createClass({
 
   renderDialogContent: function(props) {
     // ...
-    React.renderComponent(<div>{props.children}</div>, this.node):
+    React.render(<div>{props.children}</div>, this.node):
 
     // after we've rendered the dialog, now we can call methods on it
     // via the props passed in like
