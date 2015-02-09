@@ -16,7 +16,7 @@ to call them.
 ```js
 $('some').crazy().junk(function() {
   var someElement = $('.something')[0];
-  React.renderComponent(SomeSmallView(), someElement);
+  React.render(SomeSmallView(), someElement);
 
   // When it needs to go away
   React.unmountComponentAtNode(someElement);
@@ -26,15 +26,15 @@ $('some').crazy().junk(function() {
 Getting Data In
 ---------------
 
-When you call `renderComponent` multiple times on the same node, React's
+When you call `render` multiple times on the same node, React's
 DOM diffing still applies. Just call it any time you need to give it new
 information from the outside app:
 
 ```js
-React.renderComponent(SomeSmallView({students: ['joe']}), someElement);
+React.render(SomeSmallView({students: ['joe']}), someElement);
 
 // later, when things change
-React.renderComponent(SomeSmallView({students: ['jane']}), someElement);
+React.render(SomeSmallView({students: ['jane']}), someElement);
 ```
 
 Getting Data Back Out
@@ -62,7 +62,7 @@ function handleCreate(data) {
 }
 
 // pass in the handler
-React.renderComponent(SomeSmallView({
+React.render(SomeSmallView({
   onCreateSomething: handleCreate
 }), someElement);
 ```
@@ -72,7 +72,7 @@ That's all there is to it.
 Iterative Changes
 -----------------
 
-Its easy to imagine taking a small workflow on a page and writing it in
+It's easy to imagine taking a small workflow on a page and writing it in
 React, and then another, and another, and another until a good portion
 of the page is in React. At that point, you can start merging the
 components into other components until the whole page is a React
