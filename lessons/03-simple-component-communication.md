@@ -1,7 +1,7 @@
 Simple Component Communication
 ==============================
 
-[Demo](http://rpflorence.github.io/react-training/code/AssignmentForm/)
+[Demo](http://ryanflorence.github.io/react-training/code/AssignmentForm/)
 [Code](../code/AssignmentForm/)
 
 In react you can communicate between components with functions passed
@@ -22,7 +22,7 @@ An event can be added to a native element as a property, and so it is
 with React components:
 
 ```js
-React.renderComponent(<button onClick={doStuff}/>, ...);
+React.render(<button onClick={doStuff}/>, ...);
 ```
 
 This works for "custom events" as well. You can supply a function to any
