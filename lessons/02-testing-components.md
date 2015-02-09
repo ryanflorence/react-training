@@ -1,7 +1,7 @@
 Testing Components
 ==================
 
-[Demo](http://rpflorence.github.io/react-training/code/ContentToggler/test-runner.html)
+[Demo](http://ryanflorence.github.io/react-training/code/ContentToggler/test-runner.html)
 [Code](../code/ContentToggler/tests.js)
 
 Setting up a test for a React component is not really different than
@@ -39,7 +39,7 @@ component in your app.
 
 ```js
 var node = document.getElementById('test-node');
-React.renderComponent(<ContentToggle/>, node);
+React.render(<ContentToggle/>, node);
 ```
 
 And then make sure to unmount after each test
@@ -63,7 +63,7 @@ var TestUtils = React.addons.TestUtils;
 var wrapper = document.getElementById('test-wrapper');
 
 // render a component to test
-var component = React.renderComponent((
+var component = React.render((
   <ContentToggle summary="i am the summary">
     I am the content
   </ContentToggle>
@@ -122,7 +122,7 @@ Bad Ideas
 ---------
 
 Try not to make assertions on `component.state` or `component.props`.
-The end result of a component is usually the effect on its display, so
+The end result of a component is usually the effect on it's display, so
 assert on the DOM when you can. Asserting on `state` and `props` is
 brittle, you could `render: function() { return null; }` and have a
 passing test suite and a totally useless component.
