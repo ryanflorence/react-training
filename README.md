@@ -1,8 +1,10 @@
 React Training
 ==============
 
-Material used for instructure's react training sessions. Issues and pull
+Material I used for instructure's react training sessions. Issues and pull
 requests welcome :)
+
+For immersive React.js training check out my new job at http://reactjs-training.com
 
 The main branch is gh-pages, so all of the examples in `code/` should
 run at http://rpflorence.github.io/react-training/code (but you'll have
