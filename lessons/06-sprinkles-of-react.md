@@ -72,7 +72,7 @@ That's all there is to it.
 Iterative Changes
 -----------------
 
-Its easy to imagine taking a small workflow on a page and writing it in
+It's easy to imagine taking a small workflow on a page and writing it in
 React, and then another, and another, and another until a good portion
 of the page is in React. At that point, you can start merging the
 components into other components until the whole page is a React
