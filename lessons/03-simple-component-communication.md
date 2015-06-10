@@ -81,7 +81,7 @@ var AssignmentList = React.createClass({
 
 var App = React.createClass({
   getInitialState: function() {
-    return {assignments: [] };
+    return { assignments: [] };
   },
 
   render: function() {
