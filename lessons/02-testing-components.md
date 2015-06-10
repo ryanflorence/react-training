@@ -1,7 +1,7 @@
 Testing Components
 ==================
 
-[Demo](http://rpflorence.github.io/react-training/code/ContentToggler/test-runner.html)
+[Demo](http://ryanflorence.github.io/react-training/code/ContentToggler/test-runner.html)
 [Code](../code/ContentToggler/tests.js)
 
 Setting up a test for a React component is not really different than
