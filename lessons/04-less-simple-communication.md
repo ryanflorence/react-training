@@ -151,7 +151,7 @@ Now we have something to do in our action from before:
 ```js
 var AssignmentActions = {
   addAssignment: function(assignment) {
-    AssignmentStore.addAssignment(assigment);
+    AssignmentStore.addAssignment(assignment);
   }
 };
 ```
