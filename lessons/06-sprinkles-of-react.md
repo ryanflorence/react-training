@@ -10,13 +10,15 @@ actions menus, or small workflows on an existing page.
 Using React around other code is no different than using React in a
 full-blown React application, except that you unmount it eventually.
 
-Remember, React components are really just functions, we don't need JSX
-to call them.
+Remember, React components are really just functions, we don't need JSX to
+call them. We'll need to create a factory before using them though.
 
 ```js
+var SomeSmallView = React.createFactory(require('my-view'));
+
 $('some').crazy().junk(function() {
   var someElement = $('.something')[0];
-  React.renderComponent(SomeSmallView(), someElement);
+  React.render(SomeSmallView(), someElement);
 
   // When it needs to go away
   React.unmountComponentAtNode(someElement);
@@ -26,15 +28,15 @@ $('some').crazy().junk(function() {
 Getting Data In
 ---------------
 
-When you call `renderComponent` multiple times on the same node, React's
-DOM diffing still applies. Just call it any time you need to give it new
+When you call `render` multiple times on the same node, React's DOM
+diffing still applies. Just call it any time you need to give it new
 information from the outside app:
 
 ```js
-React.renderComponent(SomeSmallView({students: ['joe']}), someElement);
+React.render(SomeSmallView({students: ['joe']}), someElement);
 
 // later, when things change
-React.renderComponent(SomeSmallView({students: ['jane']}), someElement);
+React.render(SomeSmallView({students: ['jane']}), someElement);
 ```
 
 Getting Data Back Out
@@ -62,7 +64,7 @@ function handleCreate(data) {
 }
 
 // pass in the handler
-React.renderComponent(SomeSmallView({
+React.render(SomeSmallView({
   onCreateSomething: handleCreate
 }), someElement);
 ```

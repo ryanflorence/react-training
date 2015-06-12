@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 // fake
 var guid = 0;
 
@@ -41,4 +39,3 @@ var AssignmentForm = React.createClass({
     );
   }
 });
-

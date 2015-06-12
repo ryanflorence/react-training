@@ -1,5 +1,3 @@
-/** @jsx React.DOM */
-
 // maybe the best test framework ever?
 function equal(a, b, description) {
   if (a === b) {
@@ -15,7 +13,7 @@ var TestUtils = React.addons.TestUtils;
 var wrapper = document.getElementById('test-wrapper');
 
 // render a component to test
-var component = React.renderComponent((
+var component = React.render((
   <ContentToggle summary="i am the summary">
     I am the content
   </ContentToggle>
@@ -48,4 +46,3 @@ equal(details.innerHTML.trim(), '',
 
 // unmount the component
 React.unmountComponentAtNode(wrapper);
-

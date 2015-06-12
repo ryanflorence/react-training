@@ -22,7 +22,7 @@ An event can be added to a native element as a property, and so it is
 with React components:
 
 ```js
-React.renderComponent(<button onClick={doStuff}/>, ...);
+React.render(<button onClick={doStuff}/>, ...);
 ```
 
 This works for "custom events" as well. You can supply a function to any

@@ -14,7 +14,7 @@ Rendering UI
 First, we'll just render a div into the document body:
 
 ```js
-React.renderComponent(<div>this is dumb</div>, document.body);
+React.render(<div>this is dumb</div>, document.body);
 ```
 
 Components are just functions, so we could do this without that freaky
@@ -22,7 +22,7 @@ JSX like so:
 
 ```js
 var div = React.DOM.div;
-React.renderComponent(div({}, 'this is dumb'), document.body);
+React.render(div({}, 'this is dumb'), document.body);
 ```
 
 Lets create our first component and render it to the page:
@@ -38,7 +38,7 @@ var App = React.createClass({
   }
 });
 
-React.renderComponent(<App/>, document.body);
+React.render(<App/>, document.body);
 ```
 
 **Note**: You must always return a root element from the `render`
@@ -85,7 +85,7 @@ var App = React.createClass({
 And finally, render it into the document:
 
 ```js
-React.renderComponent(<App/>, document.body);
+React.render(<App/>, document.body);
 ```
 
 Props
