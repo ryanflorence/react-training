@@ -71,6 +71,8 @@ so if you change it, it doesn't know what it's supposed to do anymore.
 Portals
 -------
 
+![Portal (game)](http://static.giantbomb.com/uploads/original/0/7113/217074-portals.jpg)
+
 We need a way to stop rendering with React, do the jQuery dialog work,
 and then start rendering with React again. Some people call these
 "Portals".  You open a portal for React to skip over a bit of old-school
