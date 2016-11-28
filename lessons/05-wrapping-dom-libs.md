@@ -94,7 +94,7 @@ var Dialog = React.createClass({
   
     // start a new React render tree with our node and the children
     // passed in from above, this is the other side of the portal.
-    React.renderComponent(<div>{this.props.children}</div>, node):
+    React.renderComponent(<div>{this.props.children}</div>, node);
   }
 });
 ```
